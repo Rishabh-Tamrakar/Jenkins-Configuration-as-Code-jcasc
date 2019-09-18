@@ -104,7 +104,7 @@ jobs:
                   stage ('Deploy-To-Tomcat') {
                     steps {
                       sshagent(['key']) {
-                        sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@tomcat_server_IP:addrerss_where_you_want_to_deploy\
+                        sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@tomcat_server_IP:addrerss_where_you_want_to_deploy'
                       }
                   }
                  }

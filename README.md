@@ -1,5 +1,7 @@
 ## Jenkins Configuration as code (jcasc)
 
+<img src="https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/jcasc.JPG" align="right" height="100" width="100">
+
 In this we are going to configure jenkins with code
 
 Prerequisites:-\

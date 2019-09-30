@@ -23,13 +23,13 @@ E. giving script in pipeline to fatch code from github then build and deploy app
 **Steps**\
 You need to follow these steps to start working on Jenkins Configuration as Code
 
-1.Install the plugin from Available plugins
+1.Install the plugin from Available plugins/
 ![Alt text](https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/images/1.JPG)
 
-2. After that You will find this plugin in Manage plugins.
+2.After that You will find this plugin in Manage plugins.
 ![Alt text](https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/images/2.JPG)
 
-3.seclect Jenkins Configuration as Code and these options will come, from here you can start working.
+3.Seclect Jenkins Configuration as Code and these options will come, from here you can start working.
 ![Alt text](https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/images/3.JPG)
 
 ***you can keep yaml file anywhere on accessible source like in the machine where Jenkins in running or AWS S3 bucket***

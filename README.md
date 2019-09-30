@@ -30,8 +30,7 @@ You need to follow these steps to start working on Jenkins Configuration as Code
 ![Alt text](https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/images/2.JPG)
 
 3.seclect Jenkins Configuration as Code and these options will come, from here you can start working.
-![Alt text](https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/images/1.JPG)
-
+![Alt text](https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/images/3.JPG)
 
 ***you can keep yaml file anywhere on accessible source like in the machine where Jenkins in running or AWS S3 bucket***
 

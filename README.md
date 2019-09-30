@@ -2,7 +2,7 @@
 
 Full explanation how to do work on JCASC Plugin [link](https://github.com/jenkinsci/configuration-as-code-plugin) 
 
-<img src="https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/jcasc.JPG" align="right" height="100" width="100">
+<img src="https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/images/jcasc.JPG" align="right" height="100" width="100">
 
 In this we are going to configure jenkins with code
 
@@ -24,13 +24,13 @@ E. giving script in pipeline to fatch code from github then build and deploy app
 You need to follow these steps to start working on Jenkins Configuration as Code
 
 1.Install the plugin from Available plugins
-![Alt text](https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/1.JPG)
+![Alt text](https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/images/1.JPG)
 
 2. After that You will find this plugin in Manage plugins.
-![Alt text](https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/2.JPG)
+![Alt text](https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/images/2.JPG)
 
 3.seclect Jenkins Configuration as Code and these options will come, from here you can start working.
-![Alt text](https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/3.JPG)
+![Alt text](https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/images/1.JPG)
 
 
 ***you can keep yaml file anywhere on accessible source like in the machine where Jenkins in running or AWS S3 bucket***
@@ -132,6 +132,17 @@ jobs:
       }
 
 ```
+You may see script approval error
+
+<img src="https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/images/script%20aprove%20error.JPG" align="center" height="200" width="500">
+
+When we give file with script so this script need to be approved so go to manage plugins and use this option
+
+<img src="https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/images/script%20apprve%20option.JPG" align="center" height="100" width="1000">
+
+And approve the script
+
+<img src="https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/images/script%20apprve.JPG" align="center" height="200" width="400">
 
 **a sample jenkins.yaml file is present in this repo**
 

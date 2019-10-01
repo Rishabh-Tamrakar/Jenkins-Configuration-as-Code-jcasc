@@ -71,7 +71,6 @@ jobs:
                       }
                     }
                   } 
-
                   stage('zap pull'){
                     steps{
                       docker pull owasp/zap2docker-stable
@@ -81,7 +80,6 @@ jobs:
                       chown jenkins:jenkins "$(pwd)/Report"
                     }
                   }
-	             
                   stage('zap run'){
                     steps{
                       docker run -v $(pwd)/Report:/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t http://34.230.47.136:8080/JavaVulnerableLab/ -g Baseline.conf -r BaseLine-Scan-Report.html || true

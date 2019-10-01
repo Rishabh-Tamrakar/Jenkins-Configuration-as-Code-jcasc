@@ -9,8 +9,8 @@ jenkins:
     local:
       allowsSignup: false
       users:
-       - id: admin
-         password: admin123
+       - id: username
+         password: userpassword
   authorizationStrategy:
     globalMatrix:
       grantedPermissions:

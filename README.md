@@ -144,6 +144,6 @@ And approve the script
 
 <img src="https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/images/script%20apprve.JPG" align="center" height="200" width="400">
 
-**a sample jenkins.yaml file is present in this repo**
+**a sample [jenkins.yaml](https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/jenkins.yaml) file is present in this repo**
 
 ***DevSecOps in CASC is present on another branch DevSecOps-With-Jcasc*** [link](https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/tree/DevSecOps-With-Jcasc)

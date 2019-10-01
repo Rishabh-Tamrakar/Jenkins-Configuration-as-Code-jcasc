@@ -146,4 +146,4 @@ And approve the script
 
 **a sample [jenkins.yaml](https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/blob/master/jenkins.yaml) file is present in this repo**
 
-***DevSecOps in CASC is present on another branch DevSecOps-With-Jcasc*** [link](https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/tree/DevSecOps-With-Jcasc)
+***DevSecOps in CASC is present on another branch [DevSecOps-With-Jcasc](https://github.com/Rishabh-Tamrakar/Jenkins-Configuration-as-Code-jcasc/tree/DevSecOps-With-Jcasc)***

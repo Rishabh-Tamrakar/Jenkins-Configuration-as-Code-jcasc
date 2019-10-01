@@ -4,7 +4,7 @@ In this approch we will use two open source tools
 1. [gitleaks](https://github.com/zricethezav/gitleaks)\
 gitleaks is a tool that will find secrets in your repository like keys, passwords you can also configure this tool to works according to you.
 
-2. [OWASP ZAP](owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)\
+2. [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)\
 Zap is to tell you about security vulnerabilities in your web applications while you are developing and testing your applications.
 
 Prerequisites:-\

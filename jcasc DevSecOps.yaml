@@ -1,0 +1,94 @@
+jenkins:
+  systemMessage: "jcasc demo\n\n"
+
+  numExecutors: 1
+  mode: NORMAL
+  scmCheckoutRetryCount: 3
+  labelString: "master-label"
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+       - id: admin
+         password: admin123
+  authorizationStrategy:
+    globalMatrix:
+      grantedPermissions:
+        - "Overall/Read:anonymous"
+        - "Overall/Administer:authenticated"
+  crumbIssuer: "standard"
+
+  remotingSecurity:
+    enabled: true
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  jdk:
+    installations:
+    - home: "/usr/lib/jvm/java-8-openjdk-amd64/"
+      name: "myjava"
+  maven:
+    installations:
+    - name: "mymvn"
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: "3.6.2"
+jobs:
+  - script: >
+      pipelineJob('Newjob') {
+        definition {
+          cps {
+            script("""\
+              pipeline {
+                agent any
+                tools {
+                    maven 'mymvn'
+                }
+                stages {
+                  stage('gitleaks') {
+                    steps {
+                      gitleaks -v --repo=https://github.com/mad-eye21/spring-project.git --report=gitleaks_results.csv || true
+                    }
+	              }
+                  stage('Clone source'){
+                    steps {
+                      git url: 'your_repo'
+                    }
+                  }
+                  stage ('Build') {
+                    steps {
+                      sh 'mvn clean install test'
+                    }
+                  }
+                  stage ('Deploy-To-Tomcat') {
+                    steps {
+                      sshagent(['kay']) {
+                        sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@your_tomcat_server_address:addrerss_where_you_want_to_deploy'
+                      }
+                    }
+                  } 
+
+                  stage('zap pull'){
+	                steps{
+                      docker pull owasp/zap2docker-stable
+                      rm -rf "$(pwd)/Report"
+                      mkdir -p "$(pwd)/Report"
+                      chmod 777 "$(pwd)/Report"
+                      chown jenkins:jenkins "$(pwd)/Report"
+                    }
+                  }
+	             
+                  stage('zap run'){
+	                steps{
+                      docker run -v $(pwd)/Report:/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t http://34.230.47.136:8080/JavaVulnerableLab/ -g Baseline.conf -r BaseLine-Scan-Report.html || true
+	                }
+                  }
+              }""".stripIndent())
+          }
+        }
+      }
+    }

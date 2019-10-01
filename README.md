@@ -22,13 +22,14 @@ Adding a stage in script for gitleaks that will create a report also
         sh'''
         gitleaks -v --repo=https://your-repo.git --report=gitleaks_results.csv || true
         '''
-        }
+       }
+   }
 ```
 
 Another script that will pull docker imageof zap and scan your application for vulnerabilities
 ```
     stage('script1') {
-	    steps{
+      steps{
         sh'''
         docker pull owasp/zap2docker-stable
         rm -rf "$(pwd)/Report"
@@ -37,13 +38,13 @@ Another script that will pull docker imageof zap and scan your application for v
         chown jenkins:jenkins "$(pwd)/Report"
         '''
        }
-	  }
+     }
     stage('scrpit2'){
-	    steps{
+      steps{
         sh'''
         docker run -v $(pwd)/Report:/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t http://adress-of-your-application/ -g Baseline.conf -r BaseLine-Scan-Report.html || true
       '''
-	    }
+      }
     }
 ```
 

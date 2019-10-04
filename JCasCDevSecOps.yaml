@@ -39,10 +39,10 @@ tool:
               id: "3.6.2"
 jobs:
   - script: >
-      pipelineJob('Newjob') {
+      pipelineJob('DeVsecOpsjob') {
         definition {
           cps {
-            script("""\
+            script('''\
               pipeline {
                 agent any
                 tools {
@@ -51,7 +51,7 @@ jobs:
                 stages {
                   stage('gitleaks') {
                     steps {
-                      gitleaks -v --repo=https://github.com/mad-eye21/spring-project.git --report=gitleaks_results.csv || true
+                      sh 'gitleaks -v --repo=https://github.com/mad-eye21/spring-project.git --report=gitleaks_results.csv || true'
                     }
                  }
                   stage('Clone source'){
@@ -73,19 +73,19 @@ jobs:
                   } 
                   stage('zap pull'){
                     steps{
-                      docker pull owasp/zap2docker-stable
-                      rm -rf "$(pwd)/Report"
-                      mkdir -p "$(pwd)/Report"
-                      chmod 777 "$(pwd)/Report"
-                      chown jenkins:jenkins "$(pwd)/Report"
+                      sh 'docker pull owasp/zap2docker-stable'
+                      sh 'rm -rf "$(pwd)/Report"'
+                      sh 'mkdir -p "$(pwd)/Report"'
+                      sh 'chmod 777 "$(pwd)/Report"'
+                      sh 'chown jenkins:jenkins "$(pwd)/Report"'
                     }
                   }
                   stage('zap run'){
                     steps{
-                      docker run -v $(pwd)/Report:/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t http://your-application-address/ -g Baseline.conf -r BaseLine-Scan-Report.html || true
+                      sh 'docker run -v $(pwd)/Report:/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t http://your-application-address/ -g Baseline.conf -r BaseLine-Scan-Report.html || true'
                     }
                   }
-              }""".stripIndent())
+              }'''.stripIndent())
           }
         }
       }
